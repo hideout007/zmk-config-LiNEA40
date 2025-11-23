@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -104,11 +104,13 @@
         delete {
             bindings = <&kp DEL>;
             key-positions = <8 9>;
+            layers = <0>;
         };
 
         pass {
             bindings = <&pass>;
             key-positions = <18 19>;
+            layers = <0>;
         };
     };
 
@@ -134,6 +136,27 @@
             #binding-cells = <0>;
             bindings = <&none &kp K &kp A &kp G &kp A &kp Y &kp A &kp M &kp A &kp BSLH &kp BSLH &kp N0 &kp N5 &kp N2 &kp N3 &kp N3 &kp N0>;
             label = "NEW_MACRO";
+        };
+
+        kakko1: kakko1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR>;
+            label = "KAKKO1";
+        };
+
+        kakko2: kakko2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp GT>;
+            label = "KAKKO2";
+        };
+
+        kakko3: kakko3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "KAKKO3";
         };
     };
 
@@ -166,10 +189,10 @@
 
         MARK {
             bindings = <
-&kp EXCLAMATION             &kp AT           &kp EXCL         &kp QMARK  &kp PERCENT                    &kp CARET     &kp AMPERSAND  &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp LBKT
-&kp AMPERSAND               &kp DOLLAR       &kp HASH         &kp PRCNT  &kp AT                         &kp C_MUTE    &kp LS(LBKT)   &kp RIGHT_BRACKET      &kp BACKSLASH         &kp EQUAL
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp SLASH  &kp UNDER                      &kp KP_EQUAL  &kp INT3       &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)     &kp LS(INT1)
-&trans                      &trans           &trans           &trans     &trans       &trans    &trans  &trans                       &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp LS(QUESTION)
+&kp EXCLAMATION             &kp AT           &kp EXCL           &kp QMARK  &kp PERCENT                    &kp CARET     &kp AMPERSAND  &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp LBKT
+&kp AMPERSAND               &kp DOLLAR       &kp HASH           &kp PRCNT  &kp AT                         &kp C_MUTE    &kp LS(LBKT)   &kp RIGHT_BRACKET      &kp BACKSLASH         &kp EQUAL
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp DOUBLE_QUOTES  &kp SLASH  &kp UNDER                      &kp KP_EQUAL  &kp INT3       &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)     &kp LS(INT1)
+&trans                      &trans           &trans             &trans     &trans       &trans    &trans  &trans                       &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp LS(QUESTION)
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
