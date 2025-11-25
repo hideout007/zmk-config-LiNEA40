@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -183,10 +183,10 @@
 
         default_layer {
             bindings = <
-&kp Q          &kp W             &kp E               &kp R           &kp T                                         &kp Y          &kp U  &kp I           &kp O           &kp P
-&kp A          &kp S             &kp D               &kp F           &kp G                                         &kp H          &kp J  &kp K           &kp L           &kp BACKSPACE
-&kp Z          &kp X             &kp C               &kp V           &kp B                                         &kp N          &kp M  &kp COMMA       &kp UP_ARROW    &kp DOT
-&mt LCTRL ESC  &kp LEFT_CONTROL  &mt LEFT_ALT GRAVE  &kp LEFT_SHIFT  &kp LEFT_COMMAND  &lt 2 SPACE    &lt 1 ENTER  &kp RIGHT_ALT         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp Q          &kp W    &kp E               &kp R           &kp T                                         &kp Y          &kp U  &kp I           &kp O           &kp P
+&kp A          &kp S    &kp D               &kp F           &kp G                                         &kp H          &kp J  &kp K           &kp L           &kp BACKSPACE
+&kp Z          &kp X    &kp C               &kp V           &kp B                                         &kp N          &kp M  &kp COMMA       &kp UP_ARROW    &kp DOT
+&mt LCTRL ESC  &kp TAB  &mt LEFT_ALT GRAVE  &kp LEFT_SHIFT  &kp LEFT_COMMAND  &lt 2 SPACE    &lt 1 ENTER  &kp RIGHT_ALT         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -194,8 +194,8 @@
 
         MARK {
             bindings = <
-&kp EXCLAMATION             &kp AT           &kp EXCL           &kp QMARK  &kp PERCENT                    &kp CARET     &kp AMPERSAND  &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp LBKT
-&kp AMPERSAND               &kp DOLLAR       &kp HASH           &kp PRCNT  &kp AT                         &kp C_MUTE    &kp LS(LBKT)   &kp RIGHT_BRACKET      &kp BACKSLASH         &kp EQUAL
+&kp ESCAPE                  &kp AT           &kp EXCL           &kp QMARK  &kp PERCENT                    &kp CARET     &kp AMPERSAND  &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp LBKT
+&kp AMPERSAND               &kp DOLLAR       &kp HASH           &kp PRCNT  &kp AT                         &kp C_MUTE    &kp LS(LBKT)   &kp RIGHT_BRACKET      &kp BACKSLASH         &trans
 &mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp DOUBLE_QUOTES  &kp SLASH  &kp UNDER                      &kp KP_EQUAL  &kp INT3       &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)     &kp LS(INT1)
 &trans                      &trans           &trans             &trans     &trans       &trans    &trans  &trans                       &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp LS(QUESTION)
             >;
@@ -210,6 +210,8 @@
 &kp HOME  &kp PAGE_DOWN           &kp END       &kp PAGE_UP              &trans                        &kp EQUAL     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
 &trans    &trans                  &trans        &trans                   &trans   &trans    &kp ENTER  &kp NUMBER_0                &kp DOT       &kp ENTER     &kp QUESTION
             >;
+
+            sensor-bindings = <&inc_dec_kp C_AC_ZOOM_IN C_AC_ZOOM_OUT>;
         };
 
         MOUSE {
